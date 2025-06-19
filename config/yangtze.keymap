@@ -1,0 +1,67 @@
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+    };
+
+    outputs {
+        compatible = "zmk,outputs";
+        usb {
+            compatible = "zmk,output-usb";
+            label = "USB";
+            priority = 90;
+        };
+        ble {
+            compatible = "zmk,output-ble";
+            label = "BLE";
+            priority = 80;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+// --------------------------------------------------------------------------------------------
+// | ESC |  1  |  2  |  3  |  4  |  5  |  6  |  7  |  8  |  9  |  0  |  -  |  =  |  "|"  |  ` |
+// | TAB  |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |  [  |  ]  |    BSPC   |
+// | CTL   |  A  |  S  |  D  |  F  |  G  |  H  |  J  |  K  |  L  |  ;  |  '  |      ENTER     |
+// |  SHIFT  |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |   SHIFT   | MO(2)  |
+// |    |  ALT  |  WIN  | MO(1) |            SPACE              | MO(1) | WIN  | ALT |        |
+// --------------------------------------------------------------------------------------------
+            bindings = <
+&kp ESC  &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp MINUS &kp EQUAL &kp BSLH &kp GRAVE
+&kp TAB  &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp LBKT  &kp RBKT  &kp BSPC
+&kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMI &kp SQT           &kp RET
+&kp LSHFT   &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH        &kp RSHFT &mo 2
+     &kp LALT &kp LGUI  &mo 1             &kp SPACE                   &mo 1 &kp RGUI &kp RALT  
+            >;
+        };
+
+        layer_1 {
+// --------------------------------------------------------------------------------------------
+// |     | F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10  | F11  | F12  |    |    |
+// |      |     |  UP |     |     |     |     |     |     |     |     |     |     |           |
+// |       |  LT |  DN |  RT |     |     | HM  | PD  | PU  |  ED |     |     |                |
+// |         |     |     |     |     |     |     |     |     |     |     |           |        |
+// |    |       |       |       |                               |       |      |     |        |
+// --------------------------------------------------------------------------------------------
+            bindings = <
+&trans  &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12 &trans &trans
+&trans  &trans &kp UP  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans &trans &kp HOME &kp PG_UP &kp PG_DN  &kp END  &trans &trans &trans
+&trans   &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+     &trans &trans &trans &trans &trans &trans &trans 
+            >;
+        };
+
+        layer_2 {
+            bindings = <
+&bt BT_CLR_ALL  &hid_usage CONSUMER_BRIGHTNESS_DOWN &hid_usage CONSUMER_BRIGHTNESS_UP &hid_usage CONSUMER_MISSION_CONTROL &hid_usage CONSUMER_LAUNCHPAD &hid_usage CONSUMER_KEYBOARD_BRIGHTNESS_DOWN &hid_usage CONSUMER_KEYBOARD_BRIGHTNESS_UP &hid_usage CONSUMER_SCAN_PREVIOUS_TRACK &hid_usage CONSUMER_PLAY_PAUSE &hid_usage CONSUMER_SCAN_NEXT_TRACK &hid_usage CONSUMER_MUTE &hid_usage CONSUMER_VOLUME_DOWN &hid_usage CONSUMER_VOLUME_UP &trans &trans
+&bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &trans &trans &trans &trans &trans &trans &trans
+&trans  &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans   &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+     &trans &trans &trans &trans &trans &trans &trans 
+            >;
+        };
+    };
+};
