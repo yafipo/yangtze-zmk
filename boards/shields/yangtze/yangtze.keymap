@@ -3,20 +3,6 @@
         zmk,kscan = &kscan0;
     };
 
-    outputs {
-        compatible = "zmk,outputs";
-        usb {
-            compatible = "zmk,output-usb";
-            label = "USB";
-            priority = 90;
-        };
-        ble {
-            compatible = "zmk,output-ble";
-            label = "BLE";
-            priority = 80;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
