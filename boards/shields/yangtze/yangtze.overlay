@@ -52,14 +52,4 @@
             RC(4,0) RC(4,1) RC(4,2)         RC(4,4)                 RC(4,7)         RC(4,9) RC(4,10)
         >;
     };
-
-    &adc {
-        status = "okay";
-    };
-
-    battery: battery {
-        compatible = "zmk,battery-voltage-divider";
-        io-channels = <&adc 2>;
-        status = "okay";
-    };
 };
