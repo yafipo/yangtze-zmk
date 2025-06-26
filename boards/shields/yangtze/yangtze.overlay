@@ -53,8 +53,13 @@
         >;
     };
 
+    &adc {
+        status = "okay";
+    };
+
     battery: battery {
-        compatible = "zmk,battery-nrf-vddh";
+        compatible = "zmk,battery-voltage-divider";
+        io-channels = <&adc 2>;
         status = "okay";
     };
 };
