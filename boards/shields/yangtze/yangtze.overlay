@@ -55,5 +55,6 @@
 
     battery: battery {
         compatible = "zmk,battery-nrf-vddh";
+        status = "okay";
     };
 };
