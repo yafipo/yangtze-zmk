@@ -8,7 +8,7 @@
 
         row-gpios
             = <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&gpio1 13  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&gpio1 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
             , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
@@ -42,7 +42,7 @@
 // | TAB  |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |  [  |  ]  |    BSPC   |
 // | CTL   |  A  |  S  |  D  |  F  |  G  |  H  |  J  |  K  |  L  |  ;  |  '  |      ENTER     |
 // |  SHIFT  |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |   SHIFT   | MO(2)  |
-// |    |  ALT  |  WIN  | MO(1) |            SPACE              | MO(1) | WIN  | ALT |        |
+// |    |  ALT  |  WIN             SPACE               | WIN  | MO(1) |        |
 // --------------------------------------------------------------------------------------------
         map = <
             RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5) RC(0,6) RC(0,7) RC(0,8) RC(0,9) RC(0,10) RC(0,11) RC(0,12) RC(0,13) RC(0,14)
